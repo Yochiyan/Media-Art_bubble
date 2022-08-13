@@ -113,7 +113,7 @@ function draw() {
 
   translate(width/2, height/2);
   // テキストのフォント
-  textFont('sacramento');
+  textFont('chewy');
   // テキストのサイズ
   textSize(120);
   // テキストの位置
