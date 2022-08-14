@@ -14,6 +14,7 @@ let sizeX = [];
 let sizeY = [];
 let numberOfTriangles = 20;
 let cout = 11;
+let noiseScale=0.02;
 
 
 
@@ -86,8 +87,6 @@ function draw() {
     fill(ellipseColor[ellipseIndex[i]])
     // 円を描く
     ellipse(positionX[i], positionY[i], size1[i]);
-    //四角
-    //rect(positionX[i], positionY[i], size2[i], size2[i]);
     //三角
     triangle(
       // 頂点の座標
@@ -113,13 +112,19 @@ function draw() {
 
   translate(width/2, height/2);
   // テキストのフォント
-  textFont('chewy');
+  textFont('pacifico');
   // テキストのサイズ
   textSize(120);
   // テキストの位置
   textAlign(CENTER, CENTER);
-  // テキストの色
-  fill(255);
+  // テキストの色を作る
+    let noiseVal1 = noise(angle)*500;
+    let noiseVal2 = noise(mouseX)*300;
+    let noiseVal3 = noise(mouseY)*300;
+    
+  // テキストの色の結果
+  fill(noiseVal1, noiseVal2, noiseVal3);
+
   // テキストを表示
   text(hour()+':'+minute()+':'+second(), 0, 0);
 }
