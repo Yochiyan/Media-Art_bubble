@@ -13,7 +13,7 @@ let angle = 0;
 let sizeX = [];
 let sizeY = [];
 let numberOfTriangles = 20;
-let cout = 11;
+let count = 11;
 let noiseScale=0.02;
 
 
@@ -42,8 +42,8 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   // 輪郭（りんかく）を消す
   noStroke();
-  // 30回処理する
-  for(let i = 0; i < cout; i++) {
+  // "count"回処理する
+  for(let i = 0; i < count; i++) {
     // 位置(円)
     positionX[i] = random(width);
     positionY[i] = random(height);
@@ -73,11 +73,12 @@ function draw() {
   // 背景をぬりつぶす
   background(0, 0, 60);
   push();
+  // 回☆転
   angle += 0.001;
   rotate(angle);
   // ブレンドモードの設定
   blendMode(ADD);
-  for(let i = 0; i < cout; i++) {
+  for(let i = 0; i < count; i++) {
     // Y座標を上に移動
     positionY[i] -= velocityY[i];
     // 線の色
@@ -112,7 +113,7 @@ function draw() {
 
   translate(width/2, height/2);
   // テキストのフォント
-  textFont('pacifico');
+  textFont('limelight');
   // テキストのサイズ
   textSize(120);
   // テキストの位置
